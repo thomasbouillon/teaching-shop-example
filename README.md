@@ -65,6 +65,7 @@ cd backend && uv sync
 cd backend/core
 uv run python manage.py migrate
 uv run python manage.py createsuperuser
+uv run python manage.py seed_products
 ```
 
 ### 3. Start development servers
@@ -75,7 +76,7 @@ uv run python manage.py createsuperuser
 
 This runs frontend on http://localhost:8080 and backend on http://localhost:8000.
 
-### 4. Add products via Django Admin
+### 4. (Optional) Add more products via Django Admin
 
 1. Go to http://localhost:8000/admin/
 2. Login with your superuser credentials
