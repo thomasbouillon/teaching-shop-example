@@ -1,4 +1,5 @@
 import { createContext, use, useEffect, useState, type PropsWithChildren } from "react";
+import toast from "react-hot-toast";
 import { fetchProducts, type Product } from "../api/products";
 
 
@@ -11,10 +12,16 @@ export function ProductsContextProvider({ children }: PropsWithChildren) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetchProducts().then(products => {
-            setProducts(products);
-            setLoading(false);
-        })
+        fetchProducts()
+            .then(products => {
+                setProducts(products);
+            })
+            .catch(() => {
+                toast.error("Failed to load products");
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     }, []);
 
     return (
