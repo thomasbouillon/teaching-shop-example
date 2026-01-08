@@ -1,7 +1,7 @@
 import { useProducts } from "../contexts/ProductsContext";
 import Products from "../Products";
 import Spinner from "../Spinner";
-import OrdersDisabledBanner from './components/OrdersDisabledBanner';
+import OrdersDisabledBanner from '../components/OrdersDisabledBanner';
 
 export default function HomePage() {
   const { loading, products } = useProducts();
