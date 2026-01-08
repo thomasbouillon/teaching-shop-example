@@ -1,6 +1,7 @@
 import { useProducts } from "../contexts/ProductsContext";
 import Products from "../Products";
 import Spinner from "../Spinner";
+import ShippingSection from "../components/ShippingSection.tsx";
 
 export default function HomePage() {
   const { loading, products } = useProducts();
@@ -29,6 +30,7 @@ export default function HomePage() {
         />
       </header>
       <main id="main">
+        <ShippingSection />
         <div className="text-center text-lg text-gray-600 mb-8">
           <p className="text-center text-lg text-gray-600">
             Découvrez notre sélection de bavoirs pour bébés.
