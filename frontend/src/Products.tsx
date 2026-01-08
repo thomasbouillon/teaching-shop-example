@@ -28,6 +28,12 @@ export default function Products() {
                 </span>
               </p>
             </div>
+            {CATEGORIES.map((category) => (
+              <CategorySection
+                key={category}
+                category={category}
+                products={products.filter((p) => p.category === category)}
+            />
           ))}
         </div>
     )
