@@ -5,7 +5,6 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/shipping" element={<ShippingSection />} />
       </Routes>
     </BrowserRouter>
   );
